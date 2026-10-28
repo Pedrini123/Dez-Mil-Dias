@@ -1,5 +1,6 @@
 # Ficheiros temporários do Microsoft Office
 ~$*
+*.bak
 
 # Ficheiros de sistema
 Thumbs.db

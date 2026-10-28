@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-28T12:00:00.000Z" agent="Antigravity" version="24.0.0">
+  <diagram id="diag_classes_pap" name="Diagrama de Classes PAP - Dez Mil Dias">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1050" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITULO DO DIAGRAMA -->
+        <mxCell id="title_banner" value="&lt;b&gt;PROJETO PAP: DEZ MIL DIAS - A VIDA DE MIYAMOTO MUSASHI&lt;/b&gt;&lt;br&gt;&lt;i&gt;Diagrama de Classes Estrutural do Sistema (Godot Engine 4 / GDScript)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#0f172a;fontColor=#ffffff;fontSize=15;align=center;" vertex="1" parent="1">
+          <mxGeometry x="280" y="15" width="700" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 1. GameManager (Singleton) -->
+        <mxCell id="cls_GameManager" value="GameManager&#xa;&lt;&lt;Singleton / Autoload&gt;&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="510" y="90" width="240" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_GameManager_attrs" value="- currentState: GameState&#xa;- currentScene: String&#xa;- playerSpawnPos: Vector2&#xa;- isPaused: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_GameManager">
+          <mxGeometry y="32" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_GameManager_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="cls_GameManager">
+          <mxGeometry y="97" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_GameManager_methods" value="+ change_mode(newScene: String): void&#xa;+ pause_game(): void&#xa;+ save_game(): bool&#xa;+ load_game(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_GameManager">
+          <mxGeometry y="105" width="240" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 2. Entity (Classe Base) -->
+        <mxCell id="cls_Entity" value="Entity&#xa;&lt;&lt;CharacterBody2D&gt;&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="190" y="320" width="220" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Entity_attrs" value="# entityId: String&#xa;# maxHealth: int&#xa;# currentHealth: int&#xa;# moveSpeed: float&#xa;# isAlive: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_Entity">
+          <mxGeometry y="32" width="220" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Entity_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#666666;" vertex="1" parent="cls_Entity">
+          <mxGeometry y="107" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_Entity_methods" value="+ take_damage(amount: int): void&#xa;+ die(): void&#xa;+ get_position(): Vector2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_Entity">
+          <mxGeometry y="115" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 3. PlayerMusashi (Herda de Entity) -->
+        <mxCell id="cls_PlayerMusashi" value="PlayerMusashi" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="230" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_PlayerMusashi_attrs" value="- stamina: float&#xa;- stance: StanceType&#xa;- inDuelMode: bool&#xa;- canAttack: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_PlayerMusashi">
+          <mxGeometry y="28" width="230" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_PlayerMusashi_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1" parent="cls_PlayerMusashi">
+          <mxGeometry y="93" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_PlayerMusashi_methods" value="+ move(dir: Vector2): void&#xa;+ attack_light(): void&#xa;+ attack_heavy(): void&#xa;+ execute_parry(): bool&#xa;+ dodge(): void&#xa;+ interact(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_PlayerMusashi">
+          <mxGeometry y="101" width="230" height="104" as="geometry" />
+        </mxCell>
+
+        <!-- 4. EnemyFighter (Herda de Entity) -->
+        <mxCell id="cls_EnemyFighter" value="EnemyFighter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="320" y="560" width="220" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EnemyFighter_attrs" value="- fighterName: String&#xa;- attackReach: float&#xa;- reactionSpeed: float&#xa;- aiState: FighterAIState" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_EnemyFighter">
+          <mxGeometry y="28" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EnemyFighter_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" vertex="1" parent="cls_EnemyFighter">
+          <mxGeometry y="93" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_EnemyFighter_methods" value="+ select_combat_tactic(): void&#xa;+ execute_feint(): void&#xa;+ perform_slash(): void&#xa;+ trigger_recovery(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_EnemyFighter">
+          <mxGeometry y="101" width="220" height="79" as="geometry" />
+        </mxCell>
+
+        <!-- 5. DuelManager -->
+        <mxCell id="cls_DuelManager" value="DuelManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="170" y="830" width="260" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_DuelManager_attrs" value="- duelActive: bool&#xa;- parryTimingWindow: float&#xa;- currentMaai: float&#xa;- duelWinner: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_DuelManager">
+          <mxGeometry y="28" width="260" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_DuelManager_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1" parent="cls_DuelManager">
+          <mxGeometry y="93" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_DuelManager_methods" value="+ start_duel(p: Player, e: Enemy): void&#xa;+ check_parry_timing(t: float): bool&#xa;+ calculate_hit(att: Entity, def: Entity): void&#xa;+ end_duel(winner: Entity): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_DuelManager">
+          <mxGeometry y="101" width="260" height="74" as="geometry" />
+        </mxCell>
+
+        <!-- 6. NPC -->
+        <mxCell id="cls_NPC" value="NPC" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="610" y="560" width="220" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_NPC_attrs" value="- npcId: String&#xa;- npcName: String&#xa;- dialogueKey: String&#xa;- portraitRes: String&#xa;- isInteractable: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_NPC">
+          <mxGeometry y="28" width="220" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_NPC_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1" parent="cls_NPC">
+          <mxGeometry y="103" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_NPC_methods" value="+ on_player_entered_area(): void&#xa;+ on_player_exited_area(): void&#xa;+ get_dialogue_key(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_NPC">
+          <mxGeometry y="111" width="220" height="64" as="geometry" />
+        </mxCell>
+
+        <!-- 7. DialogueManager -->
+        <mxCell id="cls_DialogueManager" value="DialogueManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="610" y="320" width="240" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_DialogueManager_attrs" value="- activeDialogueId: String&#xa;- currentLine: int&#xa;- totalLines: int&#xa;- isDialogueActive: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_DialogueManager">
+          <mxGeometry y="28" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_DialogueManager_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d79b00;" vertex="1" parent="cls_DialogueManager">
+          <mxGeometry y="93" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_DialogueManager_methods" value="+ open_dialogue(npc: NPC): void&#xa;+ advance_line(): String&#xa;+ choose_option(opt: int): void&#xa;+ close_dialogue(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_DialogueManager">
+          <mxGeometry y="101" width="240" height="74" as="geometry" />
+        </mxCell>
+
+        <!-- 8. CodexManager (Singleton) -->
+        <mxCell id="cls_CodexManager" value="CodexManager&#xa;&lt;&lt;Singleton / Autoload&gt;&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#b0e3e6;strokeColor=#0e8088;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="930" y="320" width="250" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_CodexManager_attrs" value="- codexDataPath: String&#xa;- unlockedEntries: Array&lt;CodexEntry&gt;&#xa;- totalEntriesCount: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_CodexManager">
+          <mxGeometry y="32" width="250" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_CodexManager_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#0e8088;" vertex="1" parent="cls_CodexManager">
+          <mxGeometry y="87" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_CodexManager_methods" value="+ load_codex_database(): void&#xa;+ unlock_entry(entryId: String): bool&#xa;+ get_entries_by_type(cat: String): Array&#xa;+ emit_entry_unlocked(e: CodexEntry): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_CodexManager">
+          <mxGeometry y="95" width="250" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 9. CodexEntry (Dados) -->
+        <mxCell id="cls_CodexEntry" value="CodexEntry" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=28;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#e6d0de;strokeColor=#996185;strokeWidth=1.5;swimlaneFillColor=#ffffff;fontSize=13;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="930" y="560" width="250" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_CodexEntry_attrs" value="- id: String&#xa;- title: String&#xa;- category: String [Doc|Lenda|Ficção]&#xa;- textContent: String&#xa;- isUnlocked: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_CodexEntry">
+          <mxGeometry y="28" width="250" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_CodexEntry_div" value="" style="line;strokeWidth=1.2;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#996185;" vertex="1" parent="cls_CodexEntry">
+          <mxGeometry y="103" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="cls_CodexEntry_methods" value="+ format_entry(): String&#xa;+ mark_discovered(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="cls_CodexEntry">
+          <mxGeometry y="111" width="250" height="74" as="geometry" />
+        </mxCell>
+
+        <!-- LIGAÇÕES / ASSOCIAÇÕES COM MULTIPLICIDADES -->
+
+        <!-- Generalização 1: PlayerMusashi -> Entity -->
+        <mxCell id="gen_player_entity" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.6;exitY=0;entryX=0.25;entryY=1;" edge="1" parent="1" source="cls_PlayerMusashi" target="cls_Entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Generalização 2: EnemyFighter -> Entity -->
+        <mxCell id="gen_enemy_entity" value="" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.4;exitY=0;entryX=0.75;entryY=1;" edge="1" parent="1" source="cls_EnemyFighter" target="cls_Entity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 1: GameManager -> PlayerMusashi (1 : 1) -->
+        <mxCell id="edge_gm_player" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.6;entryX=0.5;entryY=0;" edge="1" parent="1" source="cls_GameManager" target="cls_PlayerMusashi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_player_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="480" y="160" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_player_tgt" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="135" y="535" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 2: GameManager -> DuelManager (1 : 0..1) -->
+        <mxCell id="edge_gm_duel" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=1.5;strokeColor=#000000;exitX=0.15;exitY=1;entryX=0.9;entryY=0;" edge="1" parent="1" source="cls_GameManager" target="cls_DuelManager">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="546" y="800" />
+              <mxPoint x="404" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_gm_duel_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="550" y="270" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_duel_tgt" value="0..1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="410" y="805" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 3: GameManager -> DialogueManager (1 : 1) -->
+        <mxCell id="edge_gm_dialogue" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="cls_GameManager" target="cls_DialogueManager">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_dialogue_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="695" y="270" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_dialogue_tgt" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="735" y="295" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 4: GameManager -> CodexManager (1 : 1) -->
+        <mxCell id="edge_gm_codex" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="cls_GameManager" target="cls_CodexManager">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_codex_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="755" y="155" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_gm_codex_tgt" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="295" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 5: DuelManager -> PlayerMusashi (1 : 1) -->
+        <mxCell id="edge_duel_player" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.25;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="cls_DuelManager" target="cls_PlayerMusashi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_duel_player_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="210" y="805" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_duel_player_tgt" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="160" y="770" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 6: DuelManager -> EnemyFighter (1 : 1) -->
+        <mxCell id="edge_duel_enemy" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.75;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="cls_DuelManager" target="cls_EnemyFighter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_duel_enemy_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="370" y="805" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_duel_enemy_tgt" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="435" y="745" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 7: PlayerMusashi -> NPC (1 : 0..*) -->
+        <mxCell id="edge_player_npc" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.85;entryX=0;entryY=0.85;" edge="1" parent="1" source="cls_PlayerMusashi" target="cls_NPC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="734" />
+              <mxPoint x="580" y="734" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_player_npc_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="275" y="710" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_player_npc_tgt" value="0..*" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="580" y="710" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 8: DialogueManager -> NPC (1 : 0..*) -->
+        <mxCell id="edge_dialogue_npc" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="cls_DialogueManager" target="cls_NPC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_dialogue_npc_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="735" y="500" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_dialogue_npc_tgt" value="0..*" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="735" y="535" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Associação 9: DialogueManager -> CodexManager (1 : 1) -->
+        <mxCell id="edge_dialogue_codex" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="cls_DialogueManager" target="cls_CodexManager">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_dialogue_codex_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="855" y="385" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_dialogue_codex_tgt" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="900" y="385" width="25" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Composição 10: CodexManager *-> CodexEntry (1 : 0..*) -->
+        <mxCell id="comp_codex_entry" value="" style="startArrow=diamond;startFill=1;startSize=14;endArrow=none;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="cls_CodexManager" target="cls_CodexEntry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_codex_entry_src" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="500" width="25" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_codex_entry_tgt" value="0..*" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#111827;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="535" width="25" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

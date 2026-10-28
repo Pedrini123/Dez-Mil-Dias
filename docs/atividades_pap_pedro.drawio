@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-28T12:00:00.000Z" agent="Antigravity" version="24.0.0">
+  <diagram id="diag_atividades_pap" name="Diagrama de Atividades PAP - Dez Mil Dias">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITULO -->
+        <mxCell id="title_banner" value="&lt;b&gt;PROJETO PAP: DEZ MIL DIAS - A VIDA DE MIYAMOTO MUSASHI&lt;/b&gt;&lt;br&gt;&lt;i&gt;Diagrama de Atividades: Fluxo de Desafio Marcial e Resolução de Duelo (Arima Kihei)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#0f172a;fontColor=#ffffff;fontSize=15;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="15" width="750" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- SWIMLANES -->
+        <!-- Raia 1: Jogador (Musashi) -->
+        <mxCell id="lane_player" value="Jogador (Musashi)" style="swimlane;whiteSpace=wrap;html=1;startSize=36;horizontal=1;collapsible=0;fillColor=#f8f9fa;strokeColor=#4b5563;strokeWidth=1.5;fontStyle=1;fontSize=14;fontColor=#000000;align=center;arcSize=0;swimlaneFillColor=#f8f9fa;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="50" y="75" width="340" height="1320" as="geometry" />
+        </mxCell>
+        <!-- Raia 2: Sistema / GameManager / UI -->
+        <mxCell id="lane_system" value="Sistema / GameManager / UI" style="swimlane;whiteSpace=wrap;html=1;startSize=36;horizontal=1;collapsible=0;fillColor=#f8f9fa;strokeColor=#4b5563;strokeWidth=1.5;fontStyle=1;fontSize=14;fontColor=#000000;align=center;arcSize=0;swimlaneFillColor=#f8f9fa;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="390" y="75" width="450" height="1320" as="geometry" />
+        </mxCell>
+        <!-- Raia 3: Adversário (IA - Arima Kihei) -->
+        <mxCell id="lane_enemy" value="Adversário (IA - Arima Kihei)" style="swimlane;whiteSpace=wrap;html=1;startSize=36;horizontal=1;collapsible=0;fillColor=#f8f9fa;strokeColor=#4b5563;strokeWidth=1.5;fontStyle=1;fontSize=14;fontColor=#000000;align=center;arcSize=0;swimlaneFillColor=#f8f9fa;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="840" y="75" width="340" height="1320" as="geometry" />
+        </mxCell>
+
+        <!-- NÓS DO FLUXO -->
+        <!-- Início -->
+        <mxCell id="start_node" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_player">
+          <mxGeometry x="155" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- 1. Explorar Aldeia -->
+        <mxCell id="act_explorar" value="Explorar recinto do templo&#xa;em modo Top-Down" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_player">
+          <mxGeometry x="85" y="115" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 2. Detetar Aproximação -->
+        <mxCell id="act_detetar" value="Detetar aproximação à tabuleta&#xa;de desafio de Kihei (Area2D)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="130" y="115" width="190" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 3. Exibir Prompt [E] -->
+        <mxCell id="act_prompt" value="Exibir sinal visual no ecrã:&#xa;[E] Ler Desafio / Interagir" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="135" y="195" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 4. Pressionar [E] -->
+        <mxCell id="act_press_e" value="Premir tecla [E]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_player">
+          <mxGeometry x="100" y="195" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 5. Abrir Diálogo -->
+        <mxCell id="act_abrir_dialogo" value="Pausar movimento livre e abrir&#xa;diálogo com Arima Kihei" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="135" y="275" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- DECISÃO 1: Aceita o Duelo? -->
+        <mxCell id="dec_aceita" value="Jogador aceita&#xa;o duelo agora?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="155" y="355" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Fim Alternativo: Recusa Duelo -->
+        <mxCell id="act_recusa" value="Fechar diálogo e retomar&#xa;exploração livre da aldeia" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="15" y="450" width="165" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end_recusa" value="" style="shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_system">
+          <mxGeometry x="82" y="525" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Transição de Cena para Duelo -->
+        <mxCell id="act_transicao" value="Guardar posição de spawn e transitar&#xa;de cena para Arena 1v1 (Side-View)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="235" y="450" width="195" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Inicializar Arena e Maai -->
+        <mxCell id="act_init_arena" value="Instanciar DuelManager, carregar HUD&#xa;e posicionar lutadores à distância de Maai" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="225" y="530" width="215" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Postura da IA e Ataque -->
+        <mxCell id="act_ia_attack" value="Assumir postura ofensiva Shintō-ryū&#xa;e desferir corte em corrida (Dash Attack)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_enemy">
+          <mxGeometry x="70" y="530" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Defesa do Jogador -->
+        <mxCell id="act_player_defesa" value="Identificar golpe inimigo e executar&#xa;ação defensiva (Guarda / Parry)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_player">
+          <mxGeometry x="75" y="615" width="190" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- DECISÃO 2: Parry Perfeito? -->
+        <mxCell id="dec_parry" value="Parry Perfeito?&#xa;(tempo &lt;= 0.15s)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="155" y="685" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Ramo SIM do Parry: Stagger -->
+        <mxCell id="act_stagger" value="Tocar efeito sonoro de metal&#xa;e desequilibrar Kihei (Stagger)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="245" y="775" width="180" height="50" as="geometry" />
+        </mxCell>
+        <!-- Contra-ataque Letal do Jogador -->
+        <mxCell id="act_counter_attack" value="Desferir corte letal decisivo&#xa;contra a guarda aberta" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_player">
+          <mxGeometry x="75" y="775" width="190" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- DECISÃO 3: Bloqueio ou Esquiva? (Ramo NÃO do Parry) -->
+        <mxCell id="dec_bloqueio" value="Bloqueio simples&#xa;ou Esquiva a tempo?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="15" y="765" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Ramo SIM de Bloqueio/Esquiva: Absorve e Reset Maai -->
+        <mxCell id="act_reset_maai" value="Absorver impacto parcial e&#xa;recuar para distância segura (Reset)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="5" y="865" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Ramo NÃO de Bloqueio: Dano Direto -->
+        <mxCell id="act_dano_player" value="Aplicar dano direto à saúde de Musashi" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="185" y="865" width="180" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- DECISÃO 4: Vida Musashi > 0? -->
+        <mxCell id="dec_vida" value="Vida Musashi&#xa;&gt; 0?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="220" y="935" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Game Over (Ramo NÃO da Vida) -->
+        <mxCell id="act_game_over" value="Apresentar ecrã de Derrota&#xa;(Game Over / Reiniciar Duelo)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=1.5;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="290" y="1015" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end_defeat" value="" style="shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_system">
+          <mxGeometry x="350" y="1085" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Registo de Vitória e Morte de Kihei -->
+        <mxCell id="act_kihei_defeat" value="Vida de Kihei = 0&#xa;(Queda do espadachim adversário)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_enemy">
+          <mxGeometry x="75" y="865" width="190" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act_vitoria" value="DuelManager encerra duelo e confirma&#xa;vitória histórica de Bennosuke aos 13 anos" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="110" y="1120" width="230" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Desbloqueio no CodexManager -->
+        <mxCell id="act_codex_unlock" value="CodexManager desbloqueia entrada:&#xa;'Primeiro Duelo: Arima Kihei (1596)'&#xa;[Classificação: Documentado]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#b0e3e6;strokeColor=#0e8088;strokeWidth=1.5;fontSize=11;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="120" y="1195" width="210" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Transitar de Volta à Aldeia -->
+        <mxCell id="act_return_village" value="Exibir notificação HUD de Códex Atualizado&#xa;e transitar de volta à exploração na aldeia" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ffffff;strokeColor=#4b5563;strokeWidth=1.5;fontSize=12;fontFamily=Helvetica;" vertex="1" parent="lane_system">
+          <mxGeometry x="115" y="1275" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Fim de Sucesso -->
+        <mxCell id="end_success" value="" style="shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_player">
+          <mxGeometry x="155" y="1285" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ARESTAS / SETAS DO DIAGRAMA DE ATIVIDADES -->
+        <mxCell id="e_start_act" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="start_node" target="act_explorar" />
+        <mxCell id="e_explorar_detetar" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="act_explorar" target="act_detetar" />
+        <mxCell id="e_detetar_prompt" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_detetar" target="act_prompt" />
+        <mxCell id="e_prompt_press" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="act_prompt" target="act_press_e" />
+        <mxCell id="e_press_abrir" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="act_press_e" target="act_abrir_dialogo" />
+        <mxCell id="e_abrir_dec1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_abrir_dialogo" target="dec_aceita" />
+
+        <!-- Decisão 1: Ramos -->
+        <mxCell id="e_dec1_recusa" value="[Não]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_aceita" target="act_recusa" />
+        <mxCell id="e_recusa_end" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_recusa" target="end_recusa" />
+
+        <mxCell id="e_dec1_sim" value="[Sim]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_aceita" target="act_transicao" />
+        <mxCell id="e_transicao_arena" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_transicao" target="act_init_arena" />
+        <mxCell id="e_arena_ia" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="act_init_arena" target="act_ia_attack" />
+        <mxCell id="e_ia_player" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="act_ia_attack" target="act_player_defesa" />
+        <mxCell id="e_player_dec2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_player_defesa" target="dec_parry" />
+
+        <!-- Decisão 2: Ramos -->
+        <mxCell id="e_dec2_sim" value="[Sim (Perfeito)]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_parry" target="act_stagger" />
+        <mxCell id="e_stagger_counter" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="act_stagger" target="act_counter_attack" />
+        <mxCell id="e_counter_kihei" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="act_counter_attack" target="act_kihei_defeat" />
+        <mxCell id="e_kihei_vitoria" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="act_kihei_defeat" target="act_vitoria" />
+
+        <mxCell id="e_dec2_nao" value="[Não]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_parry" target="dec_bloqueio" />
+
+        <!-- Decisão 3: Ramos -->
+        <mxCell id="e_dec3_sim" value="[Sim]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_bloqueio" target="act_reset_maai" />
+        <mxCell id="e_reset_loop" value="[Reset Maai]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="act_reset_maai" target="act_init_arena" />
+
+        <mxCell id="e_dec3_nao" value="[Não]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_bloqueio" target="act_dano_player" />
+        <mxCell id="e_dano_dec4" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_dano_player" target="dec_vida" />
+
+        <!-- Decisão 4: Ramos -->
+        <mxCell id="e_dec4_nao" value="[Não (Vida = 0)]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_vida" target="act_game_over" />
+        <mxCell id="e_gameover_end" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_game_over" target="end_defeat" />
+
+        <mxCell id="e_dec4_sim" value="[Sim]" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="dec_vida" target="act_player_defesa" />
+
+        <!-- Conclusão e Pós-Duelo -->
+        <mxCell id="e_vitoria_codex" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_vitoria" target="act_codex_unlock" />
+        <mxCell id="e_codex_return" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="act_codex_unlock" target="act_return_village" />
+        <mxCell id="e_return_end" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1.5;strokeColor=#000000;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="act_return_village" target="end_success" />
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
